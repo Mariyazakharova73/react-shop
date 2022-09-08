@@ -1,12 +1,12 @@
 function Footer() {
   return (
-    <footer className="deep-purple lighten-1">
+    <footer className="teal lighten-1">
       <div className="footer-copyright">
         <div className="container">
           © {new Date().getFullYear()} Copyright Text
-          <a className="grey-text text-lighten-4 right" href="#!">
+          {/* <a className="grey-text text-lighten-4 right" href="#!">
             Repo
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>

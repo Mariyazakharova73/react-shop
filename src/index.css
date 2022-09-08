@@ -35,10 +35,62 @@ nav {
   flex-grow: 1;
 }
 
-.card-quantity {
+.card-quantity {}
 
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  padding: 1rem;
+  transition: opacity .5s linear;
 }
 
-.cart{
-  
+.cart:hover {
+  opacity: .8;
+}
+
+@media (min-width: 767px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
+}
+
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 50rem;
+  max-width: 95%;
+  -webkit-box-shadow: 0px 0px 10px 4px rgba(13, 75, 122, 0.2);
+  -moz-box-shadow: 0px 0px 10px 4px rgba(13, 75, 122, 0.2);
+  box-shadow: 0px 0px 10px 4px rgba(13, 75, 122, 0.2);
+}
+
+.basket-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: opacity .5s linear, color .5s linear;
+}
+
+.basket-close:hover {
+  opacity: .6;
+  color: black
+}
+
+.basket-delete {
+  cursor: pointer;
+  transition: opacity .5s linear, color .5s linear;
+}
+
+.basket-delete:hover {
+  opacity: .6;
+  color: black
 }
