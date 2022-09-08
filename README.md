@@ -31,9 +31,17 @@
 
 npm install <br/>
 npm start <br/>
+Работа с gh-pages.<br/>
+"homepage": "http://{username}.github.io/{repo-name}"<br/>
+"scripts": {
+//...<br/>
+"predeploy": "npm run build",<br/>
+"deploy": "gh-pages -d build"<br/>
+}<br/>
+npm install gh-pages --save-dev <br/>
 npm run deploy <br/>
 <!-- //npm install gh-pages --save-dev -->
 
 **Cсылка на страницу проекта**
 
-* [Ссылка: "react-shop"]()
+* [Ссылка: "react-shop"](https://mariyazakharova73.github.io/react-shop/)
