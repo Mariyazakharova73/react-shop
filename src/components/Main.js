@@ -3,6 +3,7 @@ import BasketList from './BasketList';
 import Cart from './Cart';
 import Goods from './Goods';
 import Preloader from './Preloader';
+import Alert from './Alert';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_URL = 'https://fortniteapi.io/v1/shop?lang=ru';
@@ -13,6 +14,7 @@ function Main() {
   //список заказов
   const [order, setOrder] = useState([]);
   const [isBasketShow, setIsBasketShow] = useState(false);
+  const [alertName, setAlertName] = useState('');
 
   //item-объект
   const addToBasket = (item) => {
@@ -39,6 +41,7 @@ function Main() {
       });
       setOrder(newOrder);
     }
+    setAlertName(item.name)
   };
 
   const removeFromBasket = (itemId) => {
@@ -80,6 +83,10 @@ function Main() {
     setIsBasketShow(!isBasketShow);
   };
 
+  const closeAlert = () => {
+    setAlertName('');
+  };
+
   useEffect(() => {
     setLoading(true);
     fetch(API_URL, {
@@ -99,7 +106,7 @@ function Main() {
 
   return (
     <main className="container content">
-      <Cart quantity={order.length} handleBasketShow={handleBasketShow} />
+       <Cart quantity={order.length} handleBasketShow={handleBasketShow} />
       {loading ? <Preloader /> : <Goods goods={goods} addToBasket={addToBasket} />}
       {isBasketShow && (
         <BasketList
@@ -110,6 +117,7 @@ function Main() {
           decQuantity={decQuantity}
         />
       )}
+      {alertName && <Alert name={alertName} closeAlert={closeAlert} /> }
     </main>
   );
 }
