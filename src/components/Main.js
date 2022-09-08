@@ -41,6 +41,41 @@ function Main() {
     }
   };
 
+  const removeFromBasket = (itemId) => {
+    const newOrder = order.filter((item) => item.id !== itemId);
+    setOrder(newOrder);
+  };
+
+  const incQuantity = (itemId) => {
+    const newOrder = order.map((item) => {
+      if (item.id === itemId) {
+        const newQuantity = item.quantity + 1;
+        return {
+          ...item,
+          quantity: newQuantity,
+        };
+      } else {
+        return item;
+      }
+    });
+    setOrder(newOrder);
+  };
+
+  const decQuantity = (itemId) => {
+    const newOrder = order.map((item) => {
+      if (item.id === itemId) {
+        const newQuantity = item.quantity - 1;
+        return {
+          ...item,
+          quantity: newQuantity >= 0 ? newQuantity : 0,
+        };
+      } else {
+        return item;
+      }
+    });
+    setOrder(newOrder);
+  };
+
   const handleBasketShow = () => {
     setIsBasketShow(!isBasketShow);
   };
@@ -66,7 +101,15 @@ function Main() {
     <main className="container content">
       <Cart quantity={order.length} handleBasketShow={handleBasketShow} />
       {loading ? <Preloader /> : <Goods goods={goods} addToBasket={addToBasket} />}
-      {isBasketShow && <BasketList order={order} handleBasketShow={handleBasketShow}/>}
+      {isBasketShow && (
+        <BasketList
+          order={order}
+          handleBasketShow={handleBasketShow}
+          removeFromBasket={removeFromBasket}
+          incQuantity={incQuantity}
+          decQuantity={decQuantity}
+        />
+      )}
     </main>
   );
 }
