@@ -1,8 +1,8 @@
 function Footer() {
   return (
-    <footer className="teal lighten-1">
+    <footer className="teal black">
       <div className="footer-copyright">
-        <div className="container">
+        <div className="container white-text">
           © {new Date().getFullYear()} Copyright Text
           {/* <a className="grey-text text-lighten-4 right" href="#!">
             Repo

@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #151e27;
 }
 
 nav {
@@ -45,10 +46,11 @@ nav {
   z-index: 5;
   padding: 1rem;
   transition: opacity .5s linear;
+  border-radius: 2px;
 }
 
 .cart:hover {
-  opacity: .8;
+  opacity: .7;
 }
 
 @media (min-width: 767px) {
@@ -83,17 +85,18 @@ nav {
 
 .basket-close:hover {
   opacity: .6;
-  color: black
+  color: #546e7a;
 }
 
 .basket-delete {
   cursor: pointer;
   transition: opacity .5s linear, color .5s linear;
+  color: black;
 }
 
 .basket-delete:hover {
   opacity: .6;
-  color: black
+  color: #546e7a;
 }
 
 @keyframes show {
@@ -111,7 +114,7 @@ nav {
 .basket-quantity {
   cursor: pointer;
   vertical-align: middle;
-  color: #26a69a;
+  color: black;
 }
 
 .btn-container {
@@ -133,4 +136,28 @@ nav {
     opacity: 1;
     transform: translateY(0rem);
   }
+}
+
+.hover {
+  transition: opacity .5s linear;
+}
+
+.hover:hover {
+  opacity: 0.5;
+}
+
+.popup {
+  /* visibility: hidden; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.x {
+  display: flex;
+  flex-direction: row;
 }

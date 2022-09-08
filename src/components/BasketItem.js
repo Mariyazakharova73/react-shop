@@ -11,8 +11,25 @@ function BasketItem(props) {
 
   return (
     <li href="#!" className="collection-item">
-      {name} <i className="material-icons basket-quantity"  onClick={()=>{decQuantity(id)}}>remove</i>x {quantity}
-      <i className="material-icons basket-quantity" onClick={()=>{incQuantity(id)}}>add</i> = {price * quantity} руб.
+      {name}{' '}
+      <i
+        className="material-icons basket-quantity"
+        onClick={() => {
+          decQuantity(id);
+        }}
+      >
+        remove
+      </i>
+      x {quantity}
+      <i
+        className="material-icons basket-quantity"
+        onClick={() => {
+          incQuantity(id);
+        }}
+      >
+        add
+      </i>{' '}
+      = {price * quantity} руб.
       <span href="#!" className="secondary-content">
         <i className="material-icons basket-delete" onClick={() => removeFromBasket(id)}>
           clear
