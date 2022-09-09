@@ -18,7 +18,6 @@
 * CSS3
 * Java Script
 * React
-* SPA
 * https://materializecss.com/getting-started.html
 * https://fortniteapi.io/
 
