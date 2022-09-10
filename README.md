@@ -31,14 +31,7 @@
 
 npm install <br/>
 npm start <br/>
-Работа с gh-pages.<br/>
-"homepage": "http://{username}.github.io/{repo-name}"<br/>
-"scripts": {
-//...<br/>
-"predeploy": "npm run build",<br/>
-"deploy": "gh-pages -d build"<br/>
-}<br/>
-npm install gh-pages --save-dev <br/>
+Работа с gh-pages:<br/>
 npm run deploy <br/>
 
 **Cсылка на страницу проекта**
